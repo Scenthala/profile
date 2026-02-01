@@ -29,7 +29,7 @@ export const profile = {
   ],
   stats: {
     yearsExperience: '25+',
-    publishedBooks: 3,
+    publishedBooks: 4,
     linkedinFollowers: '22K+',
     fortune100Clients: '10+',
   },
@@ -198,16 +198,28 @@ export const experiences = [
 
 export const books = [
   {
+    title: 'Artificial Intelligence Design and Solution for Risk and Security',
+    description:
+      'A comprehensive design and solution framework applying AI to both risk management and security — bridging strategy, architecture, and implementation.',
+    tags: ['AI', 'Risk', 'Security', 'Architecture'],
+    publisher: 'Business Expert Press',
+    publisherUrl: 'https://www.businessexpertpress.com/srini-centhala/',
+  },
+  {
     title: 'Artificial Intelligence for Security',
     description:
       'Comprehensive guide on applying AI and machine learning to cybersecurity, threat detection, and security automation.',
     tags: ['AI', 'Security', 'Deep Learning'],
+    publisher: 'Business Expert Press',
+    publisherUrl: 'https://www.businessexpertpress.com/srini-centhala/',
   },
   {
     title: 'Artificial Intelligence for Risk Management',
     description:
       'How AI transforms risk assessment, fraud detection, and compliance across financial services and enterprise environments.',
     tags: ['AI', 'Risk', 'Finance'],
+    publisher: 'Business Expert Press',
+    publisherUrl: 'https://www.businessexpertpress.com/srini-centhala/',
   },
   {
     title: 'OneStop Project Management',
@@ -376,5 +388,6 @@ export const navLinks = [
   { label: 'Books', href: '#books' },
   { label: 'Skills', href: '#skills' },
   { label: 'Certifications', href: '#certifications' },
+  { label: 'Timeline', href: '#timeline' },
   { label: 'Contact', href: '#contact' },
 ]

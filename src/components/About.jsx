@@ -1,4 +1,5 @@
 import { profile } from '../data/profile'
+import ScrollReveal from './ScrollReveal'
 import '../App.css'
 
 const expertise = [
@@ -61,7 +62,8 @@ export default function About() {
           gap: '24px',
         }}>
           {expertise.map((item, i) => (
-            <div key={i} className="card">
+            <ScrollReveal key={i} delay={i * 0.08}>
+            <div className="card">
               <div style={{ fontSize: '1.8rem', marginBottom: '14px' }}>{item.icon}</div>
               <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '10px' }}>
                 {item.title}
@@ -70,6 +72,7 @@ export default function About() {
                 {item.description}
               </p>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

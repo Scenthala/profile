@@ -95,6 +95,10 @@ export default function Hero() {
             <a href="#experience" className="btn btn-outline">
               View Experience
             </a>
+            <a href="/Srini_Centhala_Resume.pdf" download className="btn btn-outline"
+              style={{ gap: '6px' }}>
+              &#8681; Resume
+            </a>
           </div>
 
           <p style={{

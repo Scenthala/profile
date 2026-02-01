@@ -1,0 +1,86 @@
+%% Entity Relationship Diagram - Content Data Model
+%% Render with: https://mermaid.live or VS Code Mermaid extension
+%% This represents the data model for when content is externalized to a CMS or JSON
+
+erDiagram
+    PROFILE ||--o{ EXPERIENCE : has
+    PROFILE ||--o{ BOOK : authored
+    PROFILE ||--o{ SKILL_GROUP : has
+    PROFILE ||--o{ CERTIFICATION : holds
+    PROFILE ||--o{ SERVICE : offers
+    PROFILE ||--o{ SOCIAL_LINK : has
+    PROFILE ||--o{ BLOG_POST : writes
+
+    EXPERIENCE ||--o{ TAG : tagged_with
+    BOOK ||--o{ TAG : tagged_with
+    BLOG_POST ||--o{ TAG : tagged_with
+
+    PROFILE {
+        string name
+        string title
+        string company
+        string location
+        string bio
+        string email
+        string avatar_url
+        int years_experience
+        int linkedin_followers
+    }
+
+    EXPERIENCE {
+        string role
+        string company
+        string period_start
+        string period_end
+        string description
+        int sort_order
+    }
+
+    BOOK {
+        string title
+        string description
+        string cover_image_url
+        string purchase_url
+        string isbn
+        int year_published
+    }
+
+    SKILL_GROUP {
+        string category
+        string[] skills
+        int sort_order
+    }
+
+    CERTIFICATION {
+        string name
+        string issuer
+        string issue_date
+        string credential_url
+    }
+
+    SERVICE {
+        string name
+        string description
+        string icon
+    }
+
+    SOCIAL_LINK {
+        string platform
+        string url
+        string icon
+    }
+
+    TAG {
+        string name
+        string color
+    }
+
+    BLOG_POST {
+        string title
+        string slug
+        string excerpt
+        string content_markdown
+        date published_at
+        string cover_image_url
+        boolean is_featured
+    }

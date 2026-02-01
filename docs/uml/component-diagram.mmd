@@ -1,0 +1,53 @@
+%% Component Diagram - Mermaid format
+%% Render with: https://mermaid.live or VS Code Mermaid extension
+
+graph TB
+    subgraph Browser["Browser"]
+        index["index.html"]
+        index --> main["main.jsx"]
+        main --> App["App.jsx"]
+
+        subgraph Components["Components"]
+            App --> Navbar
+            App --> Hero
+            App --> About
+            App --> Experience
+            App --> Books
+            App --> Skills
+            App --> Contact
+            App --> Footer
+        end
+
+        subgraph Styles["Styling Layer"]
+            indexCSS["index.css<br/>(CSS Variables / Theme)"]
+            appCSS["App.css<br/>(Shared Classes)"]
+        end
+
+        subgraph Data["Data Layer (Future)"]
+            profileData["src/data/profile.js"]
+            hooks["src/hooks/"]
+            utils["src/utils/"]
+        end
+
+        Components --> Styles
+        Components -.-> Data
+    end
+
+    subgraph External["External Services"]
+        fonts["Google Fonts API"]
+        linkedin["LinkedIn Profile"]
+        emailjs["EmailJS / Formspree<br/>(Future)"]
+        cms["Headless CMS<br/>(Future)"]
+        analytics["Analytics<br/>(Future)"]
+    end
+
+    index --> fonts
+    Contact -.-> emailjs
+    Components -.-> cms
+    Components -.-> analytics
+
+    style Browser fill:#1a1a2e,stroke:#6c63ff,color:#e8e8f0
+    style Components fill:#12121a,stroke:#6c63ff,color:#e8e8f0
+    style Styles fill:#12121a,stroke:#00d4ff,color:#e8e8f0
+    style Data fill:#12121a,stroke:#00c9a7,color:#e8e8f0
+    style External fill:#0a0a0f,stroke:#6c63ff,color:#e8e8f0

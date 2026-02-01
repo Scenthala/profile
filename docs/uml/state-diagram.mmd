@@ -1,0 +1,41 @@
+%% State Diagram - Application States
+%% Render with: https://mermaid.live or VS Code Mermaid extension
+
+stateDiagram-v2
+    [*] --> Loading: User visits site
+
+    Loading --> PageReady: React mounted
+    PageReady --> Scrolling: User scrolls
+
+    state Scrolling {
+        [*] --> NavTransparent
+        NavTransparent --> NavBlurred: scrollY > 50
+        NavBlurred --> NavTransparent: scrollY <= 50
+    }
+
+    state MobileMenu {
+        [*] --> MenuClosed
+        MenuClosed --> MenuOpen: Click hamburger
+        MenuOpen --> MenuClosed: Click link
+        MenuOpen --> MenuClosed: Click hamburger
+    }
+
+    state ContactForm {
+        [*] --> FormEmpty
+        FormEmpty --> FormFilling: User types
+        FormFilling --> FormSubmitting: Click submit
+        FormSubmitting --> FormSuccess: API 200
+        FormSubmitting --> FormError: API error
+        FormError --> FormFilling: User retries
+        FormSuccess --> FormEmpty: Reset
+    }
+
+    state ThemeToggle {
+        [*] --> DarkMode
+        DarkMode --> LightMode: Toggle theme
+        LightMode --> DarkMode: Toggle theme
+    }
+
+    PageReady --> MobileMenu: viewport < 768px
+    Scrolling --> ContactForm: Navigate to #contact
+    PageReady --> ThemeToggle: Future feature

@@ -1,0 +1,38 @@
+%% Sitemap / Information Architecture
+%% Render with: https://mermaid.live or VS Code Mermaid extension
+
+graph TD
+    Home["/ (Home)"]
+
+    Home --> HeroSection["Hero<br/>Name, Title, CTA, Stats"]
+    Home --> AboutSection["#about<br/>Expertise Cards x3"]
+    Home --> ExperienceSection["#experience<br/>Career Timeline"]
+    Home --> BooksSection["#books<br/>Published Works x3"]
+    Home --> SkillsSection["#skills<br/>Skill Groups + Certs"]
+    Home --> ContactSection["#contact<br/>CTA + Services"]
+
+    subgraph Future["Future Pages"]
+        Blog["/blog<br/>Articles & Posts"]
+        BlogPost["/blog/:slug<br/>Individual Post"]
+        Projects["/projects<br/>Case Studies"]
+        Resume["/resume<br/>Downloadable CV"]
+    end
+
+    Home -.-> Blog
+    Blog -.-> BlogPost
+    Home -.-> Projects
+    Home -.-> Resume
+
+    subgraph ExternalLinks["External Links"]
+        LinkedIn["linkedin.com/in/srinicenthala"]
+        BizstatsAI["bizstats.ai"]
+        Email["mailto:srini@bizstats.ai"]
+    end
+
+    ContactSection --> LinkedIn
+    ContactSection --> Email
+    Home --> BizstatsAI
+
+    style Home fill:#6c63ff,stroke:#6c63ff,color:white
+    style Future fill:#1a1a2e,stroke:#6c63ff,color:#e8e8f0,stroke-dasharray: 5 5
+    style ExternalLinks fill:#1a1a2e,stroke:#00d4ff,color:#e8e8f0

@@ -1,0 +1,44 @@
+%% Sequence Diagram - User Navigation Flow
+%% Render with: https://mermaid.live or VS Code Mermaid extension
+
+sequenceDiagram
+    participant U as User
+    participant B as Browser
+    participant V as Vite Dev Server
+    participant R as React App
+    participant E as External APIs
+
+    Note over U,E: Initial Page Load
+    U->>B: Navigate to site
+    B->>V: GET /index.html
+    V->>B: HTML + JS bundle
+    B->>E: Load Google Fonts
+    B->>R: Mount React root
+    R->>B: Render all sections (SPA)
+    B->>U: Display portfolio
+
+    Note over U,E: Navigation
+    U->>B: Click nav link (#about)
+    B->>B: Smooth scroll to section
+    B->>R: Navbar detects scroll position
+    R->>B: Update navbar background (blur)
+
+    Note over U,E: Mobile Navigation
+    U->>B: Click hamburger menu
+    R->>B: Toggle mobile menu overlay
+    U->>B: Click nav link
+    R->>B: Close menu + scroll to section
+
+    Note over U,E: Contact (Future)
+    U->>B: Fill contact form
+    B->>R: Form state update
+    U->>B: Submit form
+    R->>E: POST to EmailJS/Formspree
+    E->>R: Success response
+    R->>B: Show confirmation message
+
+    Note over U,E: Blog (Future)
+    U->>B: Navigate to blog
+    R->>E: Fetch posts from CMS API
+    E->>R: Return blog posts JSON
+    R->>B: Render blog listing

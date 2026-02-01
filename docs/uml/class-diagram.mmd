@@ -1,0 +1,102 @@
+%% Class/Component Diagram - Data structures and relationships
+%% Render with: https://mermaid.live or VS Code Mermaid extension
+
+classDiagram
+    class App {
+        +render() JSX
+    }
+
+    class Navbar {
+        -scrolled: boolean
+        -menuOpen: boolean
+        -navLinks: NavLink[]
+        +onScroll() void
+        +toggleMenu() void
+        +render() JSX
+    }
+
+    class Hero {
+        -stats: Stat[]
+        +render() JSX
+    }
+
+    class About {
+        -expertiseCards: ExpertiseCard[]
+        +render() JSX
+    }
+
+    class Experience {
+        -experiences: ExperienceItem[]
+        +render() JSX
+    }
+
+    class Books {
+        -books: Book[]
+        +render() JSX
+    }
+
+    class Skills {
+        -skillGroups: SkillGroup[]
+        -certifications: string[]
+        +render() JSX
+    }
+
+    class Contact {
+        -services: string[]
+        +render() JSX
+    }
+
+    class Footer {
+        +render() JSX
+    }
+
+    class NavLink {
+        +label: string
+        +href: string
+    }
+
+    class Stat {
+        +value: string
+        +label: string
+    }
+
+    class ExpertiseCard {
+        +icon: string
+        +title: string
+        +description: string
+    }
+
+    class ExperienceItem {
+        +role: string
+        +company: string
+        +period: string
+        +description: string
+        +tags: string[]
+    }
+
+    class Book {
+        +title: string
+        +description: string
+        +tags: string[]
+    }
+
+    class SkillGroup {
+        +category: string
+        +skills: string[]
+    }
+
+    App --> Navbar
+    App --> Hero
+    App --> About
+    App --> Experience
+    App --> Books
+    App --> Skills
+    App --> Contact
+    App --> Footer
+
+    Navbar --> NavLink
+    Hero --> Stat
+    About --> ExpertiseCard
+    Experience --> ExperienceItem
+    Books --> Book
+    Skills --> SkillGroup

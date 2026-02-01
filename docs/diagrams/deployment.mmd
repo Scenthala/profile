@@ -1,0 +1,52 @@
+%% Deployment Architecture
+%% Render with: https://mermaid.live or VS Code Mermaid extension
+
+graph LR
+    subgraph Dev["Development"]
+        Code["Source Code<br/>(GitHub)"]
+        LocalDev["npm run dev<br/>localhost:5173"]
+    end
+
+    subgraph CI["CI/CD Pipeline"]
+        GHA["GitHub Actions"]
+        Lint["Lint"]
+        Test["Test"]
+        Build["Vite Build"]
+    end
+
+    subgraph CDN["Hosting / CDN"]
+        Pages["GitHub Pages<br/>/ Vercel / Netlify"]
+        CF["Cloudflare CDN"]
+    end
+
+    subgraph Services["External Services"]
+        Fonts["Google Fonts"]
+        FormAPI["Contact Form API<br/>(EmailJS / Formspree)"]
+        CMS["Headless CMS<br/>(Contentful / Sanity)"]
+        Analytics["Analytics<br/>(Plausible / GA)"]
+    end
+
+    subgraph Users["End Users"]
+        Desktop["Desktop Browser"]
+        Mobile["Mobile Browser"]
+    end
+
+    Code --> GHA
+    GHA --> Lint --> Test --> Build
+    Build --> Pages
+    Pages --> CF
+    CF --> Desktop
+    CF --> Mobile
+
+    Desktop --> Fonts
+    Desktop --> FormAPI
+    Desktop --> CMS
+    Desktop --> Analytics
+
+    Code --> LocalDev
+
+    style Dev fill:#1a1a2e,stroke:#6c63ff,color:#e8e8f0
+    style CI fill:#1a1a2e,stroke:#00d4ff,color:#e8e8f0
+    style CDN fill:#1a1a2e,stroke:#00c9a7,color:#e8e8f0
+    style Services fill:#1a1a2e,stroke:#6c63ff,color:#e8e8f0
+    style Users fill:#0a0a0f,stroke:#6c63ff,color:#e8e8f0

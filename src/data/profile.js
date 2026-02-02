@@ -491,6 +491,50 @@ export const faqItems = [
     question: 'How do you ensure data quality at enterprise scale?',
     answer: 'Three-layer approach: (1) Prevention — data contracts at source, schema validation, SLAs with producers, (2) Detection — automated quality checks in pipelines (completeness, freshness, accuracy, consistency), (3) Resolution — alert routing, impact analysis, and automated remediation. Tools like Monte Carlo or custom frameworks built on Great Expectations work well.',
   },
+  {
+    question: 'What is a Lakehouse architecture and why does it matter?',
+    answer: 'A Lakehouse combines the best of data lakes (cheap storage, schema flexibility, raw data) with data warehouses (ACID transactions, SQL performance, governance). Platforms like Databricks Delta Lake and Snowflake make this practical. It eliminates the two-system problem — no more ETL between your lake and warehouse. One platform for BI, data science, and streaming.',
+  },
+  {
+    question: 'How should enterprises approach LLM adoption?',
+    answer: 'Start with retrieval-augmented generation (RAG) rather than fine-tuning. Build a vector database of your enterprise knowledge, use an LLM as the reasoning layer. Key decisions: (1) Build vs. buy — OpenAI/Claude APIs vs. self-hosted open-source, (2) Data privacy — what goes to external APIs vs. stays on-prem, (3) Governance — prompt guardrails, output validation, audit trails.',
+  },
+  {
+    question: 'What is the difference between ETL and ELT, and which should I use?',
+    answer: 'ETL (Extract-Transform-Load) transforms data before loading into the warehouse — traditional approach. ELT (Extract-Load-Transform) loads raw data first, then transforms in the warehouse using its compute power. Use ELT for modern cloud warehouses (Snowflake, BigQuery, Databricks) where compute is elastic. ETL still works for edge cases with strict compliance or data minimization requirements.',
+  },
+  {
+    question: 'How do you handle real-time vs. batch processing decisions?',
+    answer: 'Ask: "What is the business cost of latency?" If stale data by 1 hour costs nothing — batch (Airflow, dbt). If seconds matter — streaming (Kafka + Spark/Flink). Most enterprises need both: a Lambda or Kappa architecture. My recommendation: start batch-first, add streaming only for use cases with proven latency requirements. Premature real-time adds enormous complexity.',
+  },
+  {
+    question: 'What is Data Vault 2.0 and when should I use it?',
+    answer: 'Data Vault 2.0 is a modeling methodology for enterprise data warehouses — designed for agility, auditability, and parallel loading. It uses three entity types: Hubs (business keys), Links (relationships), and Satellites (descriptive data). Use it when you need: full audit history, multiple source integration, parallel team development, or regulatory compliance. Avoid it for simple BI-only warehouses where Star Schema suffices.',
+  },
+  {
+    question: 'How do you evaluate cloud costs and prevent budget overruns?',
+    answer: 'Four strategies: (1) Right-size from day one — use auto-scaling, spot instances, and serverless where possible, (2) Tagging discipline — tag every resource by team, project, environment, (3) FinOps practice — monthly cost reviews with engineering teams, not just finance, (4) Architecture choices — choose serverless (BigQuery, Athena) over always-on clusters for intermittent workloads. A well-architected system is inherently cost-efficient.',
+  },
+  {
+    question: 'What is the role of data governance in modern architectures?',
+    answer: 'Governance is not a bureaucratic layer — it is the immune system of your data platform. Modern governance includes: (1) Data cataloging (know what data exists), (2) Lineage (know where it came from and where it goes), (3) Access control (row/column level security), (4) Quality monitoring (automated SLAs), (5) Privacy compliance (GDPR, CCPA masking and consent). Tools like Atlan, Collibra, or Unity Catalog make this practical.',
+  },
+  {
+    question: 'How do you design for multi-cloud without over-engineering?',
+    answer: 'True multi-cloud is expensive and rarely necessary. What most enterprises need is cloud-portable architecture: (1) Use Snowflake or Databricks as a cross-cloud data layer, (2) Containerize workloads (Docker/K8s) for compute portability, (3) Abstract storage behind APIs, (4) Avoid deep coupling to one cloud\'s proprietary services. Design for one primary cloud with exit capability — not simultaneous multi-cloud deployment.',
+  },
+  {
+    question: 'What is MCP (Model Context Protocol) and why should architects care?',
+    answer: 'MCP is an open protocol that standardizes how AI models connect to external tools, data sources, and APIs. Think of it as USB-C for AI — one standard interface instead of custom integrations for every tool. For architects, MCP matters because it enables agentic AI systems where LLMs can query databases, call APIs, read documents, and take actions through a governed, auditable protocol. Early adoption gives enterprises a head start on agentic AI infrastructure.',
+  },
+  {
+    question: 'How do you build a business case for data platform modernization?',
+    answer: 'Quantify three categories: (1) Cost reduction — legacy license savings, reduced maintenance, fewer ETL failures, (2) Revenue enablement — faster time to insight, new analytics capabilities, ML-driven personalization, (3) Risk reduction — compliance gaps, data quality incidents, key-person dependencies. Frame it as: "We spend $X maintaining legacy. For $Y investment, we unlock Z capabilities and save $W annually." Always tie to business KPIs the CFO cares about.',
+  },
+  {
+    question: 'What skills should a data architect develop in 2025-2026?',
+    answer: 'Core: SQL (always), Python, cloud platforms (at least 2 of AWS/GCP/Azure), data modeling (Star Schema + Data Vault). Growing: MLOps, LLM/RAG architecture, streaming (Kafka), IaC (Terraform). Emerging: Agentic AI (CrewAI, MCP), data contracts, active metadata. Soft skills: stakeholder communication, cost optimization, and the ability to translate business problems into technical architectures — this is the highest-value skill.',
+  },
 ]
 
 export const techRadar = [
@@ -601,13 +645,140 @@ export const speakingTopics = [
   },
 ]
 
+export const methodology = {
+  name: 'Enterprise Intelligence Architecture',
+  tagline: 'Translating business strategy into data-driven enterprise systems',
+  description: 'Enterprise Intelligence Architecture (EIA) is a methodology for designing the central nervous system of modern enterprises — connecting business goals, data ecosystems, AI/ML capabilities, and cloud infrastructure into a unified, governed, and scalable architecture.',
+  principles: [
+    {
+      title: 'Business-First Translation',
+      description: 'Every architecture decision starts with a business outcome. Map C-suite objectives to data capabilities before selecting any technology.',
+      icon: '1',
+    },
+    {
+      title: 'Layered Intelligence Stack',
+      description: 'Structure data flow across five layers: Ingest, Store, Process, Serve, and Act. Each layer has clear contracts, SLAs, and governance.',
+      icon: '2',
+    },
+    {
+      title: 'Metadata-Driven Design',
+      description: 'Build once, deploy many. Use metadata to drive data loads, transformations, validation rules, and reporting — minimizing custom code.',
+      icon: '3',
+    },
+    {
+      title: 'Cloud-Agnostic Patterns',
+      description: 'Design for portability. Use abstraction layers that work across AWS, GCP, and Azure so enterprises avoid vendor lock-in.',
+      icon: '4',
+    },
+    {
+      title: 'AI-Ready Foundation',
+      description: 'Every data platform should be ML-ready from day one. Feature stores, model registries, and MLOps pipelines are not add-ons — they are core.',
+      icon: '5',
+    },
+    {
+      title: 'Governed Autonomy',
+      description: 'Centralize standards and governance. Decentralize execution. Domain teams own their data products within enterprise guardrails.',
+      icon: '6',
+    },
+  ],
+  layers: [
+    { name: 'Act', description: 'Agentic AI, Decision Engines, Real-time Actions', color: 'var(--success)' },
+    { name: 'Serve', description: 'APIs, BI Dashboards, ML Model Serving, Data Products', color: 'var(--accent-light)' },
+    { name: 'Process', description: 'ETL/ELT, Feature Engineering, ML Training, Data Quality', color: 'var(--gradient-start)' },
+    { name: 'Store', description: 'Lakehouse, Data Vault 2.0, Vector DBs, Feature Stores', color: 'var(--gradient-end)' },
+    { name: 'Ingest', description: 'Streaming (Kafka), Batch (Airflow), APIs, Data Contracts', color: '#f0a030' },
+  ],
+}
+
+export const thoughtLeadership = [
+  {
+    platform: 'LinkedIn',
+    label: 'Follow on LinkedIn',
+    url: 'https://linkedin.com/in/srinicenthala',
+    description: '22K+ followers — enterprise architecture insights, AI trends, and career lessons.',
+    icon: 'in',
+    active: true,
+  },
+  {
+    platform: 'Substack',
+    label: 'Newsletter (Coming Soon)',
+    url: '#',
+    description: 'Architecture Insights with Srini — bi-weekly deep dives on enterprise data & AI patterns.',
+    icon: '✉',
+    active: false,
+  },
+  {
+    platform: 'YouTube',
+    label: 'YouTube (Coming Soon)',
+    url: '#',
+    description: 'Architecture walkthroughs, cloud comparisons, and Data Vault to Lakehouse migration tutorials.',
+    icon: '▶',
+    active: false,
+  },
+  {
+    platform: 'Medium',
+    label: 'Medium (Coming Soon)',
+    url: '#',
+    description: 'Long-form articles on AI strategy, data architecture, and enterprise transformation.',
+    icon: 'M',
+    active: false,
+  },
+  {
+    platform: 'Podcast',
+    label: 'Podcast (Coming Soon)',
+    url: '#',
+    description: 'Data Architecture Decoded — conversations with enterprise data leaders.',
+    icon: '🎙',
+    active: false,
+  },
+]
+
+export const architecturePatterns = [
+  {
+    title: 'Modern Lakehouse Architecture',
+    description: 'Reference architecture for building a unified Lakehouse on Databricks or Snowflake — combining data lake flexibility with warehouse performance.',
+    tags: ['Databricks', 'Delta Lake', 'Snowflake', 'dbt'],
+    layers: ['Bronze (Raw)', 'Silver (Cleansed)', 'Gold (Business)'],
+  },
+  {
+    title: 'MLOps Pipeline Pattern',
+    description: 'End-to-end ML lifecycle from feature engineering to model serving — with CI/CD, model registry, drift monitoring, and A/B testing.',
+    tags: ['MLflow', 'SageMaker', 'Vertex AI', 'Airflow'],
+    layers: ['Feature Store', 'Training', 'Registry', 'Serving', 'Monitoring'],
+  },
+  {
+    title: 'Data Mesh Implementation',
+    description: 'Decentralized data ownership with domain-oriented data products, self-serve platform, federated governance, and data contracts.',
+    tags: ['Data Products', 'Domain Teams', 'Data Contracts', 'Self-Serve'],
+    layers: ['Domain Teams', 'Data Products', 'Platform', 'Governance'],
+  },
+  {
+    title: 'Agentic AI + MCP Enterprise Pattern',
+    description: 'Architecture for deploying agentic AI systems with Model Context Protocol — tool orchestration, guardrails, audit trails, and human-in-the-loop.',
+    tags: ['CrewAI', 'MCP', 'n8n', 'LangChain'],
+    layers: ['Orchestrator', 'Agents', 'Tools/MCP', 'Guardrails', 'Audit'],
+  },
+  {
+    title: 'Real-Time Streaming Architecture',
+    description: 'Event-driven architecture for real-time analytics — from event ingestion through stream processing to real-time dashboards and alerts.',
+    tags: ['Kafka', 'Spark Streaming', 'Flink', 'Kinesis'],
+    layers: ['Producers', 'Event Bus', 'Stream Processing', 'Serving', 'Actions'],
+  },
+  {
+    title: 'Cloud Migration Playbook',
+    description: 'Phased migration from on-prem data warehouses (Teradata, Oracle, Netezza) to cloud-native Lakehouse with dual-run validation.',
+    tags: ['AWS', 'GCP', 'Azure', 'Snowflake'],
+    layers: ['Assess', 'Design', 'Migrate', 'Validate', 'Decommission'],
+  },
+]
+
 export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Case Studies', href: '#case-studies' },
+  { label: 'Methodology', href: '#methodology' },
   { label: 'Books', href: '#books' },
   { label: 'Skills', href: '#skills' },
   { label: 'Services', href: '#services' },
-  { label: 'Timeline', href: '#timeline' },
   { label: 'Contact', href: '#contact' },
 ]

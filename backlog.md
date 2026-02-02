@@ -23,16 +23,16 @@
 - [ ] Add architecture diagrams to case studies
 
 ### Thought Leadership Hub (Gap vs. Tristan Handy, Chip Huyen, Joe Reis)
-- [ ] Add Substack newsletter embed/link section
-- [ ] Add YouTube channel embed section
-- [ ] Add podcast appearances section
-- [ ] Add Medium articles section
-- [ ] Create "Thought Leadership" nav section combining all content
+- [x] Create "Thought Leadership" section with LinkedIn (active) + Substack, YouTube, Medium, Podcast (coming soon placeholders)
+- [ ] Update Substack link when newsletter launches
+- [ ] Update YouTube link when channel launches
+- [ ] Update Medium link when articles publish
+- [ ] Update Podcast link when launched
 
 ### Named Methodology (Gap vs. Cassie Kozyrkov "Decision Intelligence", Zhamak Dehghani "Data Mesh", Chad Sanderson "Data Contracts")
-- [ ] Define and brand "Enterprise Intelligence Architecture" (or similar) as Srini's signature methodology
-- [ ] Create a visual framework diagram for the methodology
-- [ ] Add dedicated section on portfolio explaining the methodology
+- [x] Define and brand "Enterprise Intelligence Architecture" (EIA) as Srini's signature methodology
+- [x] Create visual framework diagram (5-layer Intelligence Stack: Ingest → Store → Process → Serve → Act)
+- [x] Add dedicated section with 6 principles, stack visualization, and description
 - [ ] Write foundational article: "The Enterprise Intelligence Architect: A New Role for the AI Era"
 
 ### Technology Radar (Gap vs. ThoughtWorks)
@@ -40,14 +40,14 @@
 - [x] Categorize: Agentic AI, MCP, CrewAI, n8n (Adopt); Data Mesh, SLMs (Trial); Graph+LLM (Assess)
 
 ### Architecture Patterns Library (Gap vs. Maxime Beauchemin open-source)
-- [ ] Create downloadable reference architectures (Lakehouse, MLOps, Data Mesh, Agentic AI + MCP)
+- [x] Create reference architectures section (Lakehouse, MLOps, Data Mesh, Agentic AI + MCP, Streaming, Cloud Migration) with layer visualizations
 - [ ] Add interactive architecture diagrams with hover/expand
 - [ ] Create "Cloud Architecture Decision Matrix: AWS vs Azure vs GCP" PDF lead magnet
 - [ ] Create "Lakehouse Migration Checklist" PDF lead magnet
 
 ### "Ask an Architect" FAQ (Gap vs. Monica Rogati, Brent Dykes)
-- [x] Add FAQ section (10 questions): Data Mesh vs Data Fabric, Cloud Migration, MLOps ROI, Star Schema vs Data Vault, AI evaluation, Agentic AI, Snowflake vs Databricks, etc.
-- [ ] Expand FAQ to 20-30 questions
+- [x] Add FAQ section expanded to 22 questions: Lakehouse, LLM adoption, ETL vs ELT, real-time vs batch, Data Vault 2.0, cloud costs, governance, multi-cloud, MCP, business cases, skills 2025-2026
+- [ ] Expand FAQ to 30 questions
 - [ ] Create "Enterprise AI Maturity Pyramid" framework visual (like Monica Rogati's Hierarchy of Needs)
 
 ### Services & Training (Gap vs. Allie Miller training, Cassie Kozyrkov consulting)
@@ -118,11 +118,11 @@
 - [x] Contact form with Formspree integration (honeypot spam protection, form validation)
 - [x] Add analytics (Plausible snippet — commented out until domain deployed)
 - [x] Add sitemap.xml and robots.txt for SEO
-- [ ] Lazy loading for images and below-the-fold sections
+- [x] Lazy loading with React.lazy() + Suspense for 15 below-fold sections
+- [x] Performance optimization — code splitting (15 separate chunks, main bundle + lazy sections)
+- [x] Framer Motion page transitions (AnimatePresence + motion.main fade-in)
 - [ ] Add PWA support (service worker, manifest.json)
 - [ ] Add unit tests (Vitest + React Testing Library)
-- [ ] Performance optimization (code splitting, dynamic imports)
-- [ ] Framer Motion for richer page transitions
 
 ## Priority 5 - Certifications (from Gap Analysis)
 - [ ] AWS Solutions Architect Professional — most respected globally
@@ -219,3 +219,11 @@
 - [x] OG image created (1200x630 PNG with gradient branding)
 - [x] Favicon: SVG + PNG 32px + PNG 192px (apple-touch-icon), gradient SC monogram
 - [x] All book data enriched (ISBNs, co-authors, descriptions from publisher pages)
+- [x] Named Methodology: "Enterprise Intelligence Architecture" — 5-layer stack, 6 principles, dedicated section
+- [x] Thought Leadership Hub — LinkedIn (active) + 4 coming-soon platforms (Substack, YouTube, Medium, Podcast)
+- [x] Architecture Patterns Library — 6 reference architectures (Lakehouse, MLOps, Data Mesh, Agentic AI+MCP, Streaming, Cloud Migration)
+- [x] FAQ expanded to 22 questions (Lakehouse, LLMs, ETL/ELT, streaming, Data Vault, cloud costs, governance, MCP, etc.)
+- [x] Lazy loading — React.lazy() + Suspense for 15 below-fold sections with spinner fallback
+- [x] Code splitting — 15 separate JS chunks for optimal loading
+- [x] Framer Motion — AnimatePresence + fade-in page transitions
+- [x] Navigation updated (Methodology added to nav)

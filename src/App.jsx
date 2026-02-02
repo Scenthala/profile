@@ -8,6 +8,7 @@ import About from './components/About'
 const Experience = lazy(() => import('./components/Experience'))
 const CaseStudies = lazy(() => import('./components/CaseStudies'))
 const Methodology = lazy(() => import('./components/Methodology'))
+const MaturityPyramid = lazy(() => import('./components/MaturityPyramid'))
 const Books = lazy(() => import('./components/Books'))
 const Skills = lazy(() => import('./components/Skills'))
 const TechRadar = lazy(() => import('./components/TechRadar'))
@@ -18,6 +19,7 @@ const Timeline = lazy(() => import('./components/Timeline'))
 const FAQ = lazy(() => import('./components/FAQ'))
 const ThoughtLeadership = lazy(() => import('./components/ThoughtLeadership'))
 const Speaking = lazy(() => import('./components/Speaking'))
+const SpeakerKit = lazy(() => import('./components/SpeakerKit'))
 const Contact = lazy(() => import('./components/Contact'))
 const Footer = lazy(() => import('./components/Footer'))
 
@@ -55,6 +57,7 @@ export default function App() {
           <Experience />
           <CaseStudies />
           <Methodology />
+          <MaturityPyramid />
           <Books />
           <Skills />
           <TechRadar />
@@ -65,6 +68,7 @@ export default function App() {
           <FAQ />
           <ThoughtLeadership />
           <Speaking />
+          <SpeakerKit />
           <Contact />
           <Footer />
         </Suspense>

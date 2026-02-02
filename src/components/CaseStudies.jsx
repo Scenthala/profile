@@ -90,6 +90,45 @@ export default function CaseStudies() {
                       </ul>
                     </div>
 
+                    {/* Architecture flow diagram */}
+                    {cs.architecture && (
+                      <div style={{ marginBottom: '16px' }}>
+                        <h4 style={{ fontSize: '0.85rem', color: 'var(--accent-light)', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                          Architecture Flow
+                        </h4>
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '4px',
+                          flexWrap: 'wrap',
+                          padding: '14px 16px',
+                          background: 'var(--bg-secondary)',
+                          borderRadius: '8px',
+                          border: '1px solid var(--border)',
+                        }}>
+                          {cs.architecture.map((step, k) => (
+                            <span key={k} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                              <span style={{
+                                padding: '5px 10px',
+                                fontSize: '0.75rem',
+                                fontFamily: "'JetBrains Mono', monospace",
+                                background: 'var(--bg-card)',
+                                border: '1px solid var(--border)',
+                                borderRadius: '6px',
+                                color: 'var(--text-secondary)',
+                                whiteSpace: 'nowrap',
+                              }}>
+                                {step}
+                              </span>
+                              {k < cs.architecture.length - 1 && (
+                                <span style={{ color: 'var(--accent-light)', fontSize: '0.9rem', flexShrink: 0 }}>&rarr;</span>
+                              )}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                       {cs.tags.map(tag => (
                         <span key={tag} className="tag">{tag}</span>

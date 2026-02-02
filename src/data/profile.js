@@ -411,6 +411,7 @@ export const caseStudies = [
     impact: ['Multi-cloud data architecture serving 4,700+ stores', 'Real-time demand forecast powering inventory decisions', 'Unified Finance platform across business units', 'Automated data validation reducing manual QA by 80%'],
     tags: ['GCP', 'Azure', 'Snowflake', 'Micro-services', 'Power BI'],
     period: '2021-2024',
+    architecture: ['TIBCO-EBX (MDM)', 'GCP + Azure Ingest', 'Snowflake (Multi-Cloud DW)', 'Ensure Framework (Validation)', 'Micro-services (Demand/Finance)', 'Power BI Dashboards'],
   },
   {
     client: 'AT&T / DirecTV',
@@ -420,6 +421,7 @@ export const caseStudies = [
     impact: ['2PB of log data processed for content analytics', 'Encryption (FPE/EFPE) securing private information', 'On-prem to AWS cloud migration completed', 'XandR addressable ads platform supported'],
     tags: ['AWS', 'Teradata', 'Vertica', '2PB', 'Ad Tech'],
     period: '2014-2019',
+    architecture: ['2PB Log Sources', 'AWS Data Lake (S3/EMR)', 'Teradata + Vertica DW', 'FPE/EFPE Encryption Layer', 'CDO Analytics Platform', 'XandR Ad Serving'],
   },
   {
     client: 'Experian',
@@ -429,6 +431,7 @@ export const caseStudies = [
     impact: ['Forrester evaluation: "Excellent Architecture & Design"', 'Worldwide deployment with single codebase', '1000 TPS uninterrupted credit reporting', 'Metadata-driven code generation'],
     tags: ['Big Data', 'Hadoop', 'MongoDB', 'Credit Bureau'],
     period: '2009-2012',
+    architecture: ['Credit Data Sources', 'Metadata-Driven Ingest', 'Hadoop + MongoDB Store', 'Code Generation Engine', 'Rules Engine (1000 TPS)', 'Credit Reports (Global)'],
   },
   {
     client: 'eBay',
@@ -438,6 +441,7 @@ export const caseStudies = [
     impact: ['100TB data warehouse for e-commerce analytics', 'Integrated ad tracking (Mediaplex, DoubleClick)', 'GMV & revenue analysis across platform', 'Unified store analytics subject area'],
     tags: ['Teradata', 'MicroStrategy', '100TB', 'Ad Analytics'],
     period: '2004-2005',
+    architecture: ['Ad Trackers (Mediaplex/DoubleClick)', 'Email Campaign Data', 'Teradata 100TB DW', 'Star Schema Marts', 'MicroStrategy BI', 'GMV & Revenue Dashboards'],
   },
   {
     client: 'DirecTV',
@@ -447,6 +451,7 @@ export const caseStudies = [
     impact: ['97% accuracy on real-time pricing offers', 'End-to-end supply chain visibility', 'Active Decision Engine for customer care', 'Master Data Management for products & regions'],
     tags: ['SAP', 'Teradata', 'Informatica', 'SCM', 'MDM'],
     period: '2012-2014',
+    architecture: ['SAP ECC/APO/BW Sources', 'Informatica ETL', 'Teradata EDW', 'MDM (Products/Regions)', 'Active Decision Engine', 'Customer Care (97% Accuracy)'],
   },
 ]
 
@@ -534,6 +539,42 @@ export const faqItems = [
   {
     question: 'What skills should a data architect develop in 2025-2026?',
     answer: 'Core: SQL (always), Python, cloud platforms (at least 2 of AWS/GCP/Azure), data modeling (Star Schema + Data Vault). Growing: MLOps, LLM/RAG architecture, streaming (Kafka), IaC (Terraform). Emerging: Agentic AI (CrewAI, MCP), data contracts, active metadata. Soft skills: stakeholder communication, cost optimization, and the ability to translate business problems into technical architectures — this is the highest-value skill.',
+  },
+  {
+    question: 'What is a data contract and why is it important?',
+    answer: 'A data contract is a formal agreement between a data producer and consumer that defines schema, quality rules, SLAs, and ownership. Think of it as an API contract for data. Without contracts, downstream systems break silently when producers change schemas. With contracts: producers own quality at the source, consumers get guarantees, and the data platform team stops being the bottleneck for every integration issue.',
+  },
+  {
+    question: 'How do you handle data security and compliance (GDPR, CCPA)?',
+    answer: 'Architecture-level: (1) Data classification — tag every field as PII, sensitive, or public, (2) Column-level security — restrict access based on role, not just table, (3) Encryption — at rest and in transit, plus field-level encryption (FPE) for sensitive columns, (4) Consent management — track user consent and propagate through pipelines, (5) Right to deletion — design pipelines that can purge specific user data across all stores. Compliance is an architecture concern, not an afterthought.',
+  },
+  {
+    question: 'What is RAG (Retrieval-Augmented Generation) and how do you implement it?',
+    answer: 'RAG combines LLMs with your enterprise knowledge base. Architecture: (1) Chunk documents into embeddings, (2) Store in a vector database (Pinecone, Milvus, Weaviate), (3) On query, retrieve relevant chunks via similarity search, (4) Pass context + query to the LLM for a grounded answer. Key decisions: chunk size (512-1024 tokens), embedding model, re-ranking strategy, and guardrails to prevent hallucination. RAG is the safest way to use LLMs with proprietary data.',
+  },
+  {
+    question: 'How do you approach master data management (MDM) in modern architectures?',
+    answer: 'MDM ensures a single authoritative source for critical business entities: customers, products, locations, accounts. Modern approach: (1) Define golden records with survivorship rules, (2) Use a dedicated MDM platform (Reltio, Informatica MDM, TIBCO-EBX) or build a lightweight entity resolution service, (3) Publish master data as data products via APIs, (4) Federate — let domains own their reference data but conform to enterprise standards. MDM is the foundation that makes all analytics trustworthy.',
+  },
+  {
+    question: 'What is the difference between a data lake and a data warehouse?',
+    answer: 'Data Lake: stores raw, unstructured, and semi-structured data cheaply (S3, GCS, ADLS). Schema-on-read. Great for data science and exploration. Risk: becomes a "data swamp" without governance. Data Warehouse: stores structured, curated data with schema-on-write (Snowflake, BigQuery, Redshift). Optimized for SQL analytics and BI. Higher cost per TB. Modern answer: Lakehouse — combines both. Store raw data cheaply, apply structure for analytics, same platform.',
+  },
+  {
+    question: 'How do you measure the ROI of a data platform?',
+    answer: 'Four metrics: (1) Time-to-insight — how fast can analysts get answers? Reduce from weeks to hours, (2) Pipeline reliability — SLA adherence, incident reduction, MTTR, (3) Cost per query — total platform cost divided by business queries served, (4) Business impact — tie data products to revenue decisions. Track before/after: "Before platform: quarterly manual reports. After: daily automated dashboards driving $XM in pricing decisions." CFOs respond to business outcomes, not technical metrics.',
+  },
+  {
+    question: 'How do you handle schema evolution without breaking downstream consumers?',
+    answer: 'Three strategies: (1) Additive-only changes — add new columns, never rename or delete in place. Use deprecation windows, (2) Schema registry — enforce compatibility checks before deployment (Confluent Schema Registry for Kafka, or Delta Lake schema enforcement), (3) Data contracts — producers declare their schema and consumers subscribe. Breaking changes require versioned endpoints and migration windows. The key principle: producers must not surprise consumers.',
+  },
+  {
+    question: 'What is observability for data pipelines and why does it matter?',
+    answer: 'Data observability is monitoring the health of your data — not just pipelines, but the data itself. Five pillars: (1) Freshness — is data arriving on time?, (2) Volume — are row counts within expected ranges?, (3) Schema — did the structure change unexpectedly?, (4) Distribution — are values within normal statistical ranges?, (5) Lineage — if something breaks, what downstream is affected? Tools like Monte Carlo, Soda, or Great Expectations automate this. Without observability, you find data issues from angry stakeholders, not alerts.',
+  },
+  {
+    question: 'How do you transition from a monolithic data team to a data mesh organization?',
+    answer: 'Incrementally, not as a big bang. Phase 1: Identify 2-3 domains with strong data ownership (e.g., marketing, finance, supply chain). Phase 2: Define data product contracts — what each domain publishes, schemas, SLAs, quality guarantees. Phase 3: Build a self-serve data platform — infrastructure that domain teams can use without filing tickets. Phase 4: Establish federated governance — shared standards (naming, security, quality) with decentralized execution. The biggest challenge is organizational, not technical: convincing domain teams to own their data products.',
   },
 ]
 
@@ -644,6 +685,41 @@ export const speakingTopics = [
     description: 'A framework for choosing the right cloud platform based on workload type, team skills, and enterprise requirements.',
   },
 ]
+
+export const maturityPyramid = {
+  title: 'Enterprise AI Maturity Pyramid',
+  description: 'Where is your organization on the AI maturity journey? Most enterprises stall at levels 1-2. True competitive advantage starts at level 4.',
+  levels: [
+    { level: 5, name: 'Autonomous Intelligence', description: 'Agentic AI systems making decisions within guardrails. Self-optimizing pipelines, automated anomaly response, AI-driven strategy.', color: 'var(--success)', width: '40%' },
+    { level: 4, name: 'Predictive & Prescriptive', description: 'ML models in production predicting outcomes. Recommendation engines, demand forecasting, risk scoring. MLOps pipelines deployed.', color: 'var(--accent-light)', width: '55%' },
+    { level: 3, name: 'Advanced Analytics', description: 'Statistical analysis, segmentation, trend detection. Self-serve BI for business users. Data products emerging.', color: 'var(--gradient-start)', width: '70%' },
+    { level: 2, name: 'Governed Data Platform', description: 'Centralized data warehouse/lakehouse. Data quality monitoring, lineage, cataloging. Single source of truth established.', color: 'var(--gradient-end)', width: '85%' },
+    { level: 1, name: 'Data Foundation', description: 'Reliable data collection, storage, and basic ETL. Clean pipelines, consistent schemas, basic reporting. Most organizations are here.', color: '#f0a030', width: '100%' },
+  ],
+}
+
+export const speakerKit = {
+  bio: 'Srini Centhala is a 25+ year veteran enterprise architect who has designed data systems for AT&T, Walmart, Experian, UPS, and eBay. Founder of Absolut-e Data Com and BizStats AI, he is the author of 4 books on AI and architecture. Srini specializes in translating business strategy into scalable data ecosystems.',
+  bioShort: 'Enterprise architect with 25+ years at Fortune 100 companies. Author of 4 AI books. Creator of the Enterprise Intelligence Architecture methodology.',
+  topics: [
+    'The Enterprise Intelligence Architect: A New Role for the AI Era',
+    'From Data Vault 2.0 to Lakehouse: The Migration Playbook',
+    '25 Years of Enterprise Data: What Changed, What Didn\'t',
+    'Agentic AI in the Enterprise: Architecture Patterns & Guardrails',
+    'Cloud Architecture Decision Matrix: AWS vs Azure vs GCP',
+  ],
+  formats: ['Keynote (30-60 min)', 'Workshop (Half-day / Full-day)', 'Panel Discussion', 'Fireside Chat'],
+  audiences: ['CTOs & CDOs', 'Data Engineering Teams', 'Enterprise Architects', 'AI/ML Practitioners'],
+  pastClients: ['AT&T', 'Walmart', 'Experian', 'eBay', 'DirecTV', 'UPS', 'VMware', 'Macy\'s'],
+}
+
+export const socialLinks = {
+  linkedin: 'https://linkedin.com/in/srinicenthala',
+  github: 'https://github.com/Scenthala',
+  absoluteE: 'https://www.absolut-e.com',
+  bizstats: 'https://www.bizstats.ai',
+  books: 'https://www.businessexpertpress.com/srini-centhala/',
+}
 
 export const methodology = {
   name: 'Enterprise Intelligence Architecture',

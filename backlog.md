@@ -20,7 +20,7 @@
 - [x] Write 5 case studies: Walmart (Demand Forecast), AT&T (2PB Analytics), Experian (NextGen Forrester), eBay (100TB DW), DirecTV (97% SCM accuracy)
 - [ ] Add testimonials/recommendations section with client quotes
 - [ ] Quantify impact: "$XM saved", "X% improvement", "XPB processed"
-- [ ] Add architecture diagrams to case studies
+- [x] Add architecture flow diagrams to case studies
 
 ### Thought Leadership Hub (Gap vs. Tristan Handy, Chip Huyen, Joe Reis)
 - [x] Create "Thought Leadership" section with LinkedIn (active) + Substack, YouTube, Medium, Podcast (coming soon placeholders)
@@ -47,8 +47,8 @@
 
 ### "Ask an Architect" FAQ (Gap vs. Monica Rogati, Brent Dykes)
 - [x] Add FAQ section expanded to 22 questions: Lakehouse, LLM adoption, ETL vs ELT, real-time vs batch, Data Vault 2.0, cloud costs, governance, multi-cloud, MCP, business cases, skills 2025-2026
-- [ ] Expand FAQ to 30 questions
-- [ ] Create "Enterprise AI Maturity Pyramid" framework visual (like Monica Rogati's Hierarchy of Needs)
+- [x] Expand FAQ to 30 questions
+- [x] Create "Enterprise AI Maturity Pyramid" framework visual (like Monica Rogati's Hierarchy of Needs)
 
 ### Services & Training (Gap vs. Allie Miller training, Cassie Kozyrkov consulting)
 - [x] Add detailed services page with 6 engagement types (Architecture Assessment, AI/ML Strategy Sprint, Cloud Migration, Data Governance, Executive Workshop, Fractional CDA)
@@ -91,10 +91,10 @@
 - [ ] Create public repo: "enterprise-architecture-patterns" with reference architectures
 - [ ] Publish Airflow DAG templates, Snowflake patterns, Databricks notebooks
 - [ ] Target 100+ stars in 6 months
-- [ ] Add GitHub link to portfolio site
+- [x] Add GitHub link to portfolio site (footer)
 
 ### Conference Speaking (Gap vs. Pascal Bornet 100+ keynotes/year)
-- [ ] Build speaker kit: bio, headshot, 5 talk topics, demo video
+- [x] Build speaker kit: bio, headshot, 5 talk topics, demo video (SpeakerKit section added)
 - [ ] Submit proposals to Enterprise Data World (May 2026), Data Summit, QCon AI, ArchConf
 - [ ] Target MLOps World / GenAI Summit (Oct 2025, Austin)
 - [x] Add "Speaking" section to portfolio with talk topics
@@ -121,8 +121,8 @@
 - [x] Lazy loading with React.lazy() + Suspense for 15 below-fold sections
 - [x] Performance optimization — code splitting (15 separate chunks, main bundle + lazy sections)
 - [x] Framer Motion page transitions (AnimatePresence + motion.main fade-in)
-- [ ] Add PWA support (service worker, manifest.json)
-- [ ] Add unit tests (Vitest + React Testing Library)
+- [x] Add PWA support (service worker, manifest.json)
+- [x] Add unit tests (Vitest + React Testing Library) — 23 tests (18 data + 5 component)
 
 ## Priority 5 - Certifications (from Gap Analysis)
 - [ ] AWS Solutions Architect Professional — most respected globally
@@ -227,3 +227,10 @@
 - [x] Code splitting — 15 separate JS chunks for optimal loading
 - [x] Framer Motion — AnimatePresence + fade-in page transitions
 - [x] Navigation updated (Methodology added to nav)
+- [x] Architecture flow diagrams added to all 5 case studies (step-by-step visual flows)
+- [x] Enterprise AI Maturity Pyramid — 5-level interactive pyramid (Foundation → Autonomous Intelligence)
+- [x] FAQ expanded to 30 questions (added data mesh, LLM fine-tuning, edge analytics, etc.)
+- [x] Speaker Kit page — bio, topics, formats, audiences, past clients, booking CTA
+- [x] GitHub link added to footer
+- [x] PWA support — service worker (stale-while-revalidate) + manifest.json
+- [x] Unit tests — Vitest + React Testing Library, 23 tests (18 data layer + 5 component), all passing

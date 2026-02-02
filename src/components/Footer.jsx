@@ -1,4 +1,4 @@
-import { profile } from '../data/profile'
+import { profile, socialLinks } from '../data/profile'
 import '../App.css'
 
 export default function Footer() {
@@ -19,17 +19,25 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} {profile.name}. All rights reserved.
         </div>
         <div style={{ display: 'flex', gap: '24px' }}>
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"
+          <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer"
             style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
             LinkedIn
           </a>
-          <a href={profile.companyUrl} target="_blank" rel="noopener noreferrer"
+          <a href={socialLinks.github} target="_blank" rel="noopener noreferrer"
+            style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+            GitHub
+          </a>
+          <a href={socialLinks.absoluteE} target="_blank" rel="noopener noreferrer"
             style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
             Absolut-e.com
           </a>
-          <a href={profile.productUrl} target="_blank" rel="noopener noreferrer"
+          <a href={socialLinks.bizstats} target="_blank" rel="noopener noreferrer"
             style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
             BizStats.AI
+          </a>
+          <a href={socialLinks.books} target="_blank" rel="noopener noreferrer"
+            style={{ color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+            Books
           </a>
         </div>
       </div>

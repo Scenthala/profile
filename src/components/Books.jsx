@@ -12,56 +12,65 @@ export default function Books() {
           Published by{' '}
           <a href="https://www.businessexpertpress.com/srini-centhala/" target="_blank" rel="noopener noreferrer">
             Business Expert Press
-          </a>.
+          </a>{' '}
+          and AuthorHouse.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px' }}>
           {books.map((book, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
             <div className="card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <div style={{
+              <a href={book.publisherUrl} target="_blank" rel="noopener noreferrer" style={{
+                display: 'block',
                 width: '100%',
-                height: '160px',
-                background: `linear-gradient(135deg, var(--bg-primary), var(--bg-card))`,
+                height: '220px',
                 borderRadius: '8px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
                 marginBottom: '20px',
+                overflow: 'hidden',
                 border: '1px solid var(--border)',
+                background: 'var(--bg-primary)',
               }}>
-                <span style={{ fontSize: '3rem', opacity: 0.6 }}>&#128214;</span>
-              </div>
+                <img
+                  src={book.cover}
+                  alt={`Cover of ${book.title}`}
+                  loading="lazy"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    padding: '8px',
+                  }}
+                />
+              </a>
               <h3 style={{ fontSize: '1.05rem', fontWeight: 600, marginBottom: '10px', lineHeight: 1.4 }}>
-                {book.publisherUrl ? (
-                  <a href={book.publisherUrl} target="_blank" rel="noopener noreferrer"
-                    style={{ color: 'var(--text-primary)', transition: 'color 0.2s' }}
-                    onMouseEnter={e => e.target.style.color = 'var(--accent-light)'}
-                    onMouseLeave={e => e.target.style.color = 'var(--text-primary)'}
-                  >
-                    {book.title}
-                  </a>
-                ) : book.title}
+                <a href={book.publisherUrl} target="_blank" rel="noopener noreferrer"
+                  style={{ color: 'var(--text-primary)', transition: 'color 0.2s' }}
+                  onMouseEnter={e => e.target.style.color = 'var(--accent-light)'}
+                  onMouseLeave={e => e.target.style.color = 'var(--text-primary)'}
+                >
+                  {book.title}
+                </a>
               </h3>
               <p style={{
                 color: 'var(--text-secondary)',
                 fontSize: '0.88rem',
-                marginBottom: '16px',
+                marginBottom: '12px',
                 flex: 1,
                 lineHeight: 1.6,
               }}>
                 {book.description}
               </p>
-              {book.publisher && (
-                <p style={{
-                  color: 'var(--text-muted)',
-                  fontSize: '0.78rem',
-                  marginBottom: '12px',
-                  fontFamily: "'JetBrains Mono', monospace",
-                }}>
-                  {book.publisher}
-                </p>
-              )}
+              <div style={{
+                fontSize: '0.78rem',
+                fontFamily: "'JetBrains Mono', monospace",
+                color: 'var(--text-muted)',
+                marginBottom: '12px',
+                lineHeight: 1.8,
+              }}>
+                <div>{book.publisher}{book.year ? ` · ${book.year}` : ''}{book.pages ? ` · ${book.pages} pages` : ''}</div>
+                {book.isbn && <div>ISBN: {book.isbn}</div>}
+                {book.coAuthors && <div>with {book.coAuthors.join(', ')}</div>}
+              </div>
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                 {book.tags.map(tag => (
                   <span key={tag} className="tag">{tag}</span>

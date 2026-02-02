@@ -8,18 +8,19 @@
 
 ## Priority 1 - Core (Remaining)
 - [ ] Add professional headshot/avatar image to Hero section
-- [ ] Add actual book cover images (source from Business Expert Press or Amazon)
+- [x] Add actual book cover images (sourced from Business Expert Press + Google Books)
 - [ ] Upload resume PDF to `public/Srini_Centhala_Resume.pdf` (download button already wired)
-- [ ] Create OG image (`public/og-image.png`, 1200x630) for social sharing previews
-- [ ] Add favicon (proper .ico or .png, replace inline SVG placeholder)
+- [x] Create OG image (`public/og-image.png`, 1200x630) for social sharing previews
+- [x] Add favicon (SVG + PNG 32px + PNG 192px apple-touch-icon)
 
 ## Priority 2 - Portfolio Sections (Gaps vs. Influencers)
 
 ### Case Studies & Social Proof (Gap vs. Allie Miller, Cassie Kozyrkov, Brent Dykes)
-- [ ] Add interactive case studies section with anonymized client stories, architecture diagrams, ROI metrics
-- [ ] Write 3-5 case studies: Walmart (Demand Forecast), AT&T (2PB Analytics), Experian (NextGen Forrester), eBay (100TB DW), DirecTV (97% SCM accuracy)
+- [x] Add interactive case studies section with anonymized client stories, ROI metrics
+- [x] Write 5 case studies: Walmart (Demand Forecast), AT&T (2PB Analytics), Experian (NextGen Forrester), eBay (100TB DW), DirecTV (97% SCM accuracy)
 - [ ] Add testimonials/recommendations section with client quotes
 - [ ] Quantify impact: "$XM saved", "X% improvement", "XPB processed"
+- [ ] Add architecture diagrams to case studies
 
 ### Thought Leadership Hub (Gap vs. Tristan Handy, Chip Huyen, Joe Reis)
 - [ ] Add Substack newsletter embed/link section
@@ -35,8 +36,8 @@
 - [ ] Write foundational article: "The Enterprise Intelligence Architect: A New Role for the AI Era"
 
 ### Technology Radar (Gap vs. ThoughtWorks)
-- [ ] Add Technology Radar section (Adopt / Trial / Assess / Hold)
-- [ ] Categorize: Agentic AI, MCP, CrewAI, n8n (Adopt); Data Mesh, SLMs (Trial); Graph+LLM (Assess)
+- [x] Add Technology Radar section (Adopt / Trial / Assess / Hold)
+- [x] Categorize: Agentic AI, MCP, CrewAI, n8n (Adopt); Data Mesh, SLMs (Trial); Graph+LLM (Assess)
 
 ### Architecture Patterns Library (Gap vs. Maxime Beauchemin open-source)
 - [ ] Create downloadable reference architectures (Lakehouse, MLOps, Data Mesh, Agentic AI + MCP)
@@ -45,14 +46,15 @@
 - [ ] Create "Lakehouse Migration Checklist" PDF lead magnet
 
 ### "Ask an Architect" FAQ (Gap vs. Monica Rogati, Brent Dykes)
-- [ ] Add FAQ section (20-30 questions): When Data Mesh vs Data Fabric? How to migrate to cloud? MLOps ROI?
+- [x] Add FAQ section (10 questions): Data Mesh vs Data Fabric, Cloud Migration, MLOps ROI, Star Schema vs Data Vault, AI evaluation, Agentic AI, Snowflake vs Databricks, etc.
+- [ ] Expand FAQ to 20-30 questions
 - [ ] Create "Enterprise AI Maturity Pyramid" framework visual (like Monica Rogati's Hierarchy of Needs)
 
 ### Services & Training (Gap vs. Allie Miller training, Cassie Kozyrkov consulting)
-- [ ] Add detailed services page with engagement types (Strategy Sprint, Architecture Assessment, Training)
-- [ ] Package "Executive AI Architecture Workshop" offering
+- [x] Add detailed services page with 6 engagement types (Architecture Assessment, AI/ML Strategy Sprint, Cloud Migration, Data Governance, Executive Workshop, Fractional CDA)
+- [x] Package "Executive AI Architecture Workshop" offering
+- [x] Add "Fractional Chief Data Architect" positioning option
 - [ ] Add Calendly booking integration for consultations
-- [ ] Add "Fractional Chief Data Architect" positioning option
 
 ### BizStats AI Showcase (Gap vs. Barr Moses Monte Carlo, Tristan Handy dbt)
 - [ ] Add public demo / architecture walkthrough of BizStats AI platform
@@ -95,7 +97,7 @@
 - [ ] Build speaker kit: bio, headshot, 5 talk topics, demo video
 - [ ] Submit proposals to Enterprise Data World (May 2026), Data Summit, QCon AI, ArchConf
 - [ ] Target MLOps World / GenAI Summit (Oct 2025, Austin)
-- [ ] Add "Speaking" section to portfolio with past/upcoming talks
+- [x] Add "Speaking" section to portfolio with talk topics
 
 ### Media & PR (Gap vs. Brent Dykes Forbes, Pascal Bornet Bloomberg)
 - [ ] Apply to Forbes Technology Council
@@ -113,13 +115,13 @@
 - [ ] Offer through BizStats AI as premium content
 
 ## Priority 4 - Technical Improvements (Website)
-- [ ] Contact form with backend (Formspree or EmailJS — spec in `docs/api/contact-form-spec.md`)
-- [ ] Add analytics (Plausible recommended — privacy-friendly)
+- [x] Contact form with Formspree integration (honeypot spam protection, form validation)
+- [x] Add analytics (Plausible snippet — commented out until domain deployed)
+- [x] Add sitemap.xml and robots.txt for SEO
 - [ ] Lazy loading for images and below-the-fold sections
 - [ ] Add PWA support (service worker, manifest.json)
 - [ ] Add unit tests (Vitest + React Testing Library)
 - [ ] Performance optimization (code splitting, dynamic imports)
-- [ ] Add sitemap.xml and robots.txt for SEO
 - [ ] Framer Motion for richer page transitions
 
 ## Priority 5 - Certifications (from Gap Analysis)
@@ -203,3 +205,17 @@
 - [x] Influencer research report (`docs/influencer-research.md`)
 - [x] Gap analysis vs. 15 influencers (`docs/gap-analysis.md`)
 - [x] GitHub repo pushed (https://github.com/Scenthala/profile)
+- [x] Case Studies section — 5 Fortune 100 client stories (Walmart, AT&T, Experian, eBay, DirecTV) with challenge/solution/impact
+- [x] "Ask an Architect" FAQ section — 10 enterprise architecture questions with expert answers
+- [x] Technology Radar section — Adopt/Trial/Assess/Hold categorization (19 technologies)
+- [x] Services section — 6 detailed engagement types with deliverables
+- [x] Speaking section — 5 talk topics with booking CTA
+- [x] Contact form with Formspree integration + honeypot spam protection
+- [x] sitemap.xml + robots.txt for SEO
+- [x] Plausible analytics snippet (commented out until domain deployed)
+- [x] Updated navigation (Case Studies, Services added to nav)
+- [x] Book cover images downloaded (4 books from Business Expert Press + Google Books)
+- [x] Books section updated with covers, ISBNs, co-authors, page counts, publisher links
+- [x] OG image created (1200x630 PNG with gradient branding)
+- [x] Favicon: SVG + PNG 32px + PNG 192px (apple-touch-icon), gradient SC monogram
+- [x] All book data enriched (ISBNs, co-authors, descriptions from publisher pages)

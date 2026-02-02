@@ -200,32 +200,52 @@ export const books = [
   {
     title: 'Artificial Intelligence Design and Solution for Risk and Security',
     description:
-      'A comprehensive design and solution framework applying AI to both risk management and security — bridging strategy, architecture, and implementation.',
+      'Targets readers to understand, learn, define problems, and architect AI projects — from current business architectures to futuristic AI-driven solutions.',
     tags: ['AI', 'Risk', 'Security', 'Architecture'],
     publisher: 'Business Expert Press',
-    publisherUrl: 'https://www.businessexpertpress.com/srini-centhala/',
+    publisherUrl: 'https://www.businessexpertpress.com/books/artificial-intelligence-design-and-solution-for-risk-and-security/',
+    cover: '/images/books/ai-design-risk-security.jpg',
+    isbn: '978-1-951527-48-8',
+    year: 2020,
+    pages: 124,
+    coAuthors: ['Archie Addo', 'Muthu Shanmugam'],
   },
   {
     title: 'Artificial Intelligence for Security',
     description:
-      'Comprehensive guide on applying AI and machine learning to cybersecurity, threat detection, and security automation.',
+      'Explores security terminologies and how AI automates security processes — with practical examples, real-time use cases, and algorithm recommendations.',
     tags: ['AI', 'Security', 'Deep Learning'],
     publisher: 'Business Expert Press',
-    publisherUrl: 'https://www.businessexpertpress.com/srini-centhala/',
+    publisherUrl: 'https://www.businessexpertpress.com/books/artificial-intelligence-for-security/',
+    cover: '/images/books/ai-security.png',
+    isbn: '978-1-951527-26-6',
+    year: 2020,
+    pages: 154,
+    coAuthors: ['Archie Addo', 'Muthu Shanmugam'],
   },
   {
     title: 'Artificial Intelligence for Risk Management',
     description:
-      'How AI transforms risk assessment, fraud detection, and compliance across financial services and enterprise environments.',
+      'How managers can apply AI to risk management — developing knowledge bases for AI projects and driving business action on risk.',
     tags: ['AI', 'Risk', 'Finance'],
     publisher: 'Business Expert Press',
-    publisherUrl: 'https://www.businessexpertpress.com/srini-centhala/',
+    publisherUrl: 'https://www.businessexpertpress.com/books/artificial-intelligence-for-risk-management/',
+    cover: '/images/books/ai-risk-management.png',
+    isbn: '978-1-949443-51-6',
+    year: 2020,
+    pages: 164,
+    coAuthors: ['Archie Addo', 'Muthu Shanmugam'],
   },
   {
     title: 'OneStop Project Management',
     description:
-      'Practical guide to managing complex technology projects — methodology, team leadership, and delivery excellence.',
+      'A new approach to learning project management — developing skills and competencies for professionals, novices, and organizations.',
     tags: ['Project Management', 'Leadership'],
+    publisher: 'AuthorHouse',
+    publisherUrl: 'https://www.amazon.com/OneStop-Project-Management-Archie-Addo/dp/1452062846',
+    cover: '/images/books/onestop-project-management.jpg',
+    isbn: '978-1-452062-84-6',
+    coAuthors: ['Archie Addo', 'Ken Agar'],
   },
 ]
 
@@ -382,12 +402,212 @@ export const clients = [
   'State of Georgia', 'State of Florida',
 ]
 
+export const caseStudies = [
+  {
+    client: 'Walmart',
+    title: 'Demand Forecast & Unified Finance Platform',
+    challenge: 'Walmart needed a micro-service architecture for demand forecasting, alert services, and unified finance across GCP and Azure, handling massive retail data volumes.',
+    solution: 'Designed micro-service architecture on GCP + Azure with Snowflake multi-cloud strategy, automated data validation (Ensure framework), and Master Data hierarchy mappings from TIBCO-EBX.',
+    impact: ['Multi-cloud data architecture serving 4,700+ stores', 'Real-time demand forecast powering inventory decisions', 'Unified Finance platform across business units', 'Automated data validation reducing manual QA by 80%'],
+    tags: ['GCP', 'Azure', 'Snowflake', 'Micro-services', 'Power BI'],
+    period: '2021-2024',
+  },
+  {
+    client: 'AT&T / DirecTV',
+    title: '2PB Content & Viewership Analytics Platform',
+    challenge: 'AT&T/DirecTV needed to process 2 petabytes of log data for content analytics, viewership insights, and the XandR ad platform while migrating from on-prem to AWS cloud.',
+    solution: 'Designed CDO solution for enterprise payment system, supply chain, content & viewership analytics. Implemented FPE & EFPE encryption for secure data handling. Migrated on-prem Data Lake to AWS.',
+    impact: ['2PB of log data processed for content analytics', 'Encryption (FPE/EFPE) securing private information', 'On-prem to AWS cloud migration completed', 'XandR addressable ads platform supported'],
+    tags: ['AWS', 'Teradata', 'Vertica', '2PB', 'Ad Tech'],
+    period: '2014-2019',
+  },
+  {
+    client: 'Experian',
+    title: 'NextGen Credit Bureau — Forrester "Excellent Architecture"',
+    challenge: 'Experian needed a next-generation credit bureau product that could be developed once and deployed worldwide, processing credit data at 1000 TPS without interruption.',
+    solution: 'Designed metadata-driven architecture for "develop once, deploy many" worldwide. Built code generation for data loads, credit reporting, and rules engine. Achieved uninterrupted credit reporting at 1000 TPS.',
+    impact: ['Forrester evaluation: "Excellent Architecture & Design"', 'Worldwide deployment with single codebase', '1000 TPS uninterrupted credit reporting', 'Metadata-driven code generation'],
+    tags: ['Big Data', 'Hadoop', 'MongoDB', 'Credit Bureau'],
+    period: '2009-2012',
+  },
+  {
+    client: 'eBay',
+    title: '100TB E-Commerce Data Warehouse',
+    challenge: 'eBay required a data warehouse for their 100TB e-commerce platform covering ad tracker analytics, email campaigns, and GMV/revenue analysis.',
+    solution: 'Designed data warehouse architecture on Teradata with MicroStrategy for the 100TB platform — integrating Mediaplex and DoubleClick ad analytics, email campaigns, and store analytics.',
+    impact: ['100TB data warehouse for e-commerce analytics', 'Integrated ad tracking (Mediaplex, DoubleClick)', 'GMV & revenue analysis across platform', 'Unified store analytics subject area'],
+    tags: ['Teradata', 'MicroStrategy', '100TB', 'Ad Analytics'],
+    period: '2004-2005',
+  },
+  {
+    client: 'DirecTV',
+    title: 'Supply Chain EDW — 97% Accuracy Decision Engine',
+    challenge: 'DirecTV needed an EDW for supply chain management and a real-time decision engine for customer care agents to deliver prioritized offers.',
+    solution: 'Designed EDW for SCM (SAP-ECC, SAP-APO, SAP-BW, TM1) covering demand planning, procurement, and reverse logistics. Built Active Decision Engine for real-time customer pricing.',
+    impact: ['97% accuracy on real-time pricing offers', 'End-to-end supply chain visibility', 'Active Decision Engine for customer care', 'Master Data Management for products & regions'],
+    tags: ['SAP', 'Teradata', 'Informatica', 'SCM', 'MDM'],
+    period: '2012-2014',
+  },
+]
+
+export const faqItems = [
+  {
+    question: 'When should an enterprise choose Data Mesh vs. Data Fabric?',
+    answer: 'Data Mesh is ideal when you have strong domain teams with data ownership culture and need decentralized autonomy. Data Fabric works better when you need centralized governance with automated metadata management. Most enterprises benefit from a hybrid: Data Mesh organizational principles with Data Fabric automation capabilities.',
+  },
+  {
+    question: 'How do you approach cloud migration for a legacy data warehouse?',
+    answer: 'I follow a phased approach: (1) Assessment & inventory of existing workloads, (2) Target architecture design (typically Lakehouse on Snowflake or Databricks), (3) Data pipeline migration with parallel validation, (4) BI layer migration, (5) Decommission legacy. The key is maintaining business continuity — dual-run both environments during transition.',
+  },
+  {
+    question: 'What\'s the ROI timeline for MLOps implementation?',
+    answer: 'Typically 6-12 months for initial ROI. The first 3 months focus on infrastructure (model registry, CI/CD pipelines, monitoring). Months 4-8 show efficiency gains — model deployment time drops from weeks to hours. By month 12, you see compounding returns: faster experimentation, reduced model drift incidents, and 3-5x more models in production.',
+  },
+  {
+    question: 'Star Schema vs. Data Vault 2.0 — which should I use?',
+    answer: 'Star Schema excels for BI/reporting with predictable query patterns. Data Vault 2.0 is superior for enterprise data warehouses needing full auditability, parallel loading, and agility. My recommendation: Data Vault 2.0 for the raw/integration layer, then Star Schema marts for consumption. This gives you the best of both worlds.',
+  },
+  {
+    question: 'How do you evaluate AI/ML use cases for enterprise adoption?',
+    answer: 'I use a 4-quadrant framework: (1) Business Value — revenue impact or cost reduction, (2) Data Readiness — is quality data available?, (3) Technical Feasibility — can current infrastructure support it?, (4) Organizational Readiness — do teams have skills and change management support? Only proceed when at least 3 of 4 quadrants score high.',
+  },
+  {
+    question: 'What\'s the difference between a Data Architect and a Data Engineer?',
+    answer: 'A Data Architect designs the blueprint — defining data models, integration patterns, governance policies, and technology selection. A Data Engineer builds the pipelines — implementing ETL/ELT processes, optimizing queries, and maintaining infrastructure. Think architect vs. builder: one draws the plans, the other constructs the building. In practice, senior professionals often span both roles.',
+  },
+  {
+    question: 'How should enterprises approach Agentic AI adoption?',
+    answer: 'Start with well-defined, low-risk workflows: document processing, data quality checks, or report generation. Use frameworks like CrewAI or n8n for orchestration. Key principles: (1) Human-in-the-loop for critical decisions, (2) Clear guardrails and permissions, (3) Audit trails for all agent actions, (4) Start with single-agent systems before multi-agent.',
+  },
+  {
+    question: 'Snowflake vs. Databricks — how do you choose?',
+    answer: 'Snowflake excels at SQL-based analytics, data sharing, and ease of use — ideal for BI-heavy workloads. Databricks leads in data science, ML/AI workloads, and streaming with Delta Lake. For enterprises needing both: use Databricks for data engineering and ML, Snowflake for analytics and data sharing. Many of my clients run both.',
+  },
+  {
+    question: 'What certifications matter most for data architects in 2025?',
+    answer: 'Top 5: (1) AWS Solutions Architect Professional — most respected cloud cert, (2) Snowflake SnowPro Advanced Architect, (3) Databricks Data Engineer Professional, (4) TOGAF 10 — used by 80% of Fortune 500, (5) Google Professional Cloud Architect. Combine platform-specific with methodology certs for the strongest profile.',
+  },
+  {
+    question: 'How do you ensure data quality at enterprise scale?',
+    answer: 'Three-layer approach: (1) Prevention — data contracts at source, schema validation, SLAs with producers, (2) Detection — automated quality checks in pipelines (completeness, freshness, accuracy, consistency), (3) Resolution — alert routing, impact analysis, and automated remediation. Tools like Monte Carlo or custom frameworks built on Great Expectations work well.',
+  },
+]
+
+export const techRadar = [
+  {
+    ring: 'Adopt',
+    description: 'Technologies we strongly recommend for enterprise use',
+    items: [
+      { name: 'Agentic AI (CrewAI, n8n)', note: 'Production-ready for workflow automation' },
+      { name: 'MCP (Model Context Protocol)', note: 'Standard for AI-tool integration' },
+      { name: 'Snowflake', note: 'Mature multi-cloud data platform' },
+      { name: 'Databricks / Delta Lake', note: 'Unified analytics & ML platform' },
+      { name: 'dbt', note: 'Analytics engineering standard' },
+      { name: 'Apache Airflow', note: 'Workflow orchestration standard' },
+    ],
+  },
+  {
+    ring: 'Trial',
+    description: 'Technologies worth pursuing in pilot projects',
+    items: [
+      { name: 'Data Mesh Architecture', note: 'Decentralized domain-owned data' },
+      { name: 'Small Language Models (SLMs)', note: 'Cost-effective for specific tasks' },
+      { name: 'LakeFS', note: 'Git-like version control for data lakes' },
+      { name: 'Data Contracts', note: 'Schema agreements between producers & consumers' },
+      { name: 'Vector Databases (Pinecone, Milvus)', note: 'Essential for RAG pipelines' },
+    ],
+  },
+  {
+    ring: 'Assess',
+    description: 'Technologies to explore and research',
+    items: [
+      { name: 'Graph + LLM Integration', note: 'Knowledge graphs enhancing LLM reasoning' },
+      { name: 'Active Metadata (Atlan)', note: 'AI-powered data cataloging' },
+      { name: 'Real-time Feature Stores', note: 'Feast, Tecton for ML features' },
+      { name: 'Data Fabric', note: 'Automated metadata-driven integration' },
+    ],
+  },
+  {
+    ring: 'Hold',
+    description: 'Technologies to avoid for new projects',
+    items: [
+      { name: 'On-Prem Hadoop Clusters', note: 'Migrate to cloud-native alternatives' },
+      { name: 'Legacy ETL (Informatica PowerCenter)', note: 'Replace with cloud-native ELT' },
+      { name: 'Monolithic Data Warehouses', note: 'Adopt Lakehouse architecture' },
+      { name: 'Custom ML Infrastructure', note: 'Use managed MLOps platforms' },
+    ],
+  },
+]
+
+export const servicesDetail = [
+  {
+    title: 'Architecture Assessment',
+    description: 'Comprehensive review of your current data architecture, identifying bottlenecks, risks, and modernization opportunities.',
+    deliverables: ['Current-state architecture documentation', 'Gap analysis & risk assessment', 'Target-state architecture blueprint', 'Migration roadmap with priorities'],
+    icon: '🔍',
+  },
+  {
+    title: 'AI/ML Strategy Sprint',
+    description: '2-4 week engagement to define your AI/ML roadmap — from use case identification to platform selection and MLOps design.',
+    deliverables: ['AI use case prioritization matrix', 'ML platform architecture', 'MLOps pipeline design', 'Build vs. buy recommendations'],
+    icon: '🧠',
+  },
+  {
+    title: 'Cloud Migration',
+    description: 'End-to-end cloud migration strategy and execution for data warehouses, data lakes, and analytics platforms on AWS, GCP, or Azure.',
+    deliverables: ['Cloud readiness assessment', 'Target architecture (Lakehouse/Data Mesh)', 'Migration runbook & timeline', 'Cost optimization model'],
+    icon: '☁️',
+  },
+  {
+    title: 'Enterprise Data Governance',
+    description: 'Design and implement data governance frameworks — data quality, lineage, cataloging, and compliance (GDPR, CCPA, SOX).',
+    deliverables: ['Data governance framework', 'Data quality scorecard', 'Lineage & cataloging setup', 'Compliance mapping'],
+    icon: '🛡️',
+  },
+  {
+    title: 'Executive AI Workshop',
+    description: 'Half-day or full-day workshop for executive teams — demystifying AI, identifying high-value opportunities, and building an AI-first strategy.',
+    deliverables: ['AI opportunity assessment', 'Executive AI playbook', 'Hands-on demo of enterprise AI patterns', 'Prioritized action plan'],
+    icon: '🎓',
+  },
+  {
+    title: 'Fractional Chief Data Architect',
+    description: 'Part-time CDA engagement for organizations needing senior architecture leadership without a full-time hire.',
+    deliverables: ['Architecture reviews & decisions', 'Team mentoring & upskilling', 'Vendor evaluation & selection', 'Standards & patterns library'],
+    icon: '👔',
+  },
+]
+
+export const speakingTopics = [
+  {
+    title: 'The Enterprise Intelligence Architect: A New Role for the AI Era',
+    description: 'How the convergence of data, AI, and cloud is creating a new architect role — and why enterprises need it.',
+  },
+  {
+    title: 'From Data Vault 2.0 to Lakehouse: The Migration Playbook',
+    description: 'Practical patterns and lessons from migrating traditional data warehouses to modern Lakehouse architecture.',
+  },
+  {
+    title: '25 Years of Enterprise Data: What Changed, What Didn\'t',
+    description: 'A retrospective on data architecture evolution — from Oracle DWs to cloud-native AI platforms.',
+  },
+  {
+    title: 'Agentic AI in the Enterprise: Architecture Patterns & Guardrails',
+    description: 'How to design enterprise-grade agentic AI systems with CrewAI, MCP, and proper governance.',
+  },
+  {
+    title: 'Cloud Architecture Decision Matrix: AWS vs Azure vs GCP',
+    description: 'A framework for choosing the right cloud platform based on workload type, team skills, and enterprise requirements.',
+  },
+]
+
 export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Case Studies', href: '#case-studies' },
   { label: 'Books', href: '#books' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Certifications', href: '#certifications' },
+  { label: 'Services', href: '#services' },
   { label: 'Timeline', href: '#timeline' },
   { label: 'Contact', href: '#contact' },
 ]

@@ -32,7 +32,23 @@ export default function Hero() {
       }} />
 
       <div className="container">
-        <div style={{ maxWidth: '750px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '48px', flexWrap: 'wrap' }}>
+        <div style={{ flexShrink: 0 }}>
+          <img
+            src="/images/headshot.jpg"
+            alt={profile.name}
+            onError={e => { e.target.onerror = null; e.target.src = '/images/avatar-placeholder.svg' }}
+            style={{
+              width: '180px',
+              height: '180px',
+              borderRadius: '50%',
+              objectFit: 'cover',
+              border: '3px solid var(--accent)',
+              boxShadow: '0 0 40px var(--accent-glow)',
+            }}
+          />
+        </div>
+        <div style={{ maxWidth: '650px', flex: 1 }}>
           <div style={{ display: 'inline-block', marginBottom: '20px' }}>
             <span className="tag" style={{ fontSize: '0.85rem', padding: '6px 16px' }}>
               {profile.role} @ {profile.company}
@@ -140,6 +156,7 @@ export default function Hero() {
               </div>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </section>
